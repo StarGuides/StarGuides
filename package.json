@@ -22,6 +22,7 @@
   "homepage": "https://github.com/StarGuides/StarGuides#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
     "css-loader": "^6.7.3",
     "express": "^4.18.2",
     "mongoose": "^7.0.3",
