@@ -29,6 +29,7 @@ const CustomerPage = () => {
 
     // want to iterate through each element in customerData list
     // pass customer info as props to each customer
+    // this possibly needs to be in a useEffect?
     const customers = customerData.map((customer, i) => {
         return (
             <CustomerComponent 
