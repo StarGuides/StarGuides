@@ -43,7 +43,7 @@ app.use('/login', (req, res) => {
 // requests to endpoint sign up
 app.use('/signup', signupRouter)
 
-// parent component of Customer comp. makes a get request for all customer path="/dashboard
+// parent component of dashboard comp. makes a get request for all dashboard path="/constumer
 app.use('/dashboard', dashboardRouter)
 
 //"path='analytics" get request for analytics page
