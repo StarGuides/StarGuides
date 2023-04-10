@@ -1,7 +1,13 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 
+
+
+// app.get('/*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../client/index.html'))
+// })
 
 
 app.listen(3000, () => {console.log('listening on port 3000')})
@@ -16,7 +22,7 @@ app.listen(3000, () => {console.log('listening on port 3000')})
 // POST request for login path="/"
 
     // if authenticated send dashboard DATA (if any) To front end
-    // if NOT logged in send a response letting the front end the customer needs to to sign up
+    // if NOT logged in send a response letting the front end the customer needs to to sign upnp
 
 
 
