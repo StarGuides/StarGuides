@@ -6,8 +6,12 @@ const express = require('express');
 const app = express();
 // require the path package to resolve paths
 const path = require('path');
+const cors = require('cors')
+
+app.use(cors());
 // json middleware to parse all incoming requests
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 //require cookie parser and initialize cookie parser as global middleware
 const cookieParser = require('cookie-parser')
 app.use(cookieParser());
@@ -30,7 +34,11 @@ const inquiriesRouter = require('./routes/inquiries');
 app.use(express.static('dist'));
 
 // requests to endpoint sign up
-app.use('/login', loginRouter)
+//add this back
+app.use('/login', (req, res) => {
+    console.log(req.body)
+    res.json('ok')
+})
 
 // requests to endpoint sign up
 app.use('/signup', signupRouter)
