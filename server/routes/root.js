@@ -32,7 +32,7 @@ const sessionController = require('../controller/sessionController');
 // // POST request for login path="/"
 // router.post('/', 
 //     // CONTROLLER HERE TO DO THE FOLLOWING
-//     // if authenticated send dashboard DATA (if any) To front end
+//     // if authenticated send  DATA (if any) To front end
 //     // if NOT logged in send a response letting the front end the customer needs to to sign up
 //     userController.verifyUser, 
 //     sessionController.startSession, 
