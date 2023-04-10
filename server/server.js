@@ -29,10 +29,10 @@ const inquiriesRouter = require('./routes/inquiries');
 // serve static files
 app.use(express.static('dist'));
 
-// requests to endpoint sign up 
+// requests to endpoint sign up
 app.use('/login', loginRouter)
 
-// requests to endpoint sign up 
+// requests to endpoint sign up
 app.use('/signup', signupRouter)
 
 // parent component of Customer comp. makes a get request for all customer path="/dashboard
@@ -63,7 +63,7 @@ app.use((err, req, res, next) => {
 });
 
 // activate roouter  on designated PORT
-app.listen(PORT, () => { 
+app.listen(PORT, () => {
     console.log(`listening on port ${PORT}...`)
 });
 

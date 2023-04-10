@@ -4,9 +4,9 @@
   "description": "StarGuides is a CRM tool to manage your clients' national park trips",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node server/server.js",
+    "start": "nodemon server/server.js",
     "build": "webpack -w",
-    "dev": "NODE_ENV=development nodemon server/server.js & NODE_ENV=development webpack serve",
+    "dev": " NODE_ENV=development webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,12 +23,13 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
-    "css-loader": "^6.7.3",
+    "apexcharts": "^3.37.3",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^7.0.3",
-    "nodemon": "^2.0.22",
     "pg": "^8.10.0",
     "react": "^18.2.0",
+    "react-apexcharts": "^1.4.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.10.0",
     "react-router-dom": "^6.10.0"
@@ -40,6 +41,7 @@
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.22",
     "style-loader": "^3.3.2",
     "ts-loader": "^9.4.2",
     "webpack": "^5.78.0",
