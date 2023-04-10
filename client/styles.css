@@ -31,7 +31,7 @@ main {
 
 .mainAppWrap {
   display: flex;
-  height: 40rem;
+  height: 60rem;
   margin-block: 7rem;
   margin-inline: 9rem;
 }
@@ -74,7 +74,7 @@ main {
 .sideBarContainer {
   display: flex;
   flex-direction: column;
-  height: 15rem;
+  height: 20rem;
   padding: 3rem;
   border-radius: 12px;
   margin-right: 1rem;
@@ -83,7 +83,7 @@ main {
 
 .viewsArea {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   padding: 1rem;
   width: 100%;
   border-radius: 12px;
@@ -128,21 +128,35 @@ main {
 
 .customerWrap {
   display: flex;
-  border-radius: 12px;
   padding: .7rem;
   margin-bottom: .5rem;
+  border-bottom: 1px solid slategrey;
 }
 
-.customerWrap:hover {
+/* .customerWrap:hover {
   border: 1px solid slategrey;
-}
+} */
 
-.customerWrap p {
+.customerWrap {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+.customerWrap span {
   margin-right: .9rem;
 }
 
 .customerHeader {
   font-size: 2rem;
   margin-bottom: 3rem;
-  text-align: center;
+  /* text-align: center; */
+}
+th, tr, td {
+  border: 1px solid;
+}
+
+td, th {
+    width: 10rem;
+    overflow: hidden;
+    text-align: center;
+    min-width: 5rem;
 }

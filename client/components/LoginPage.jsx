@@ -26,7 +26,7 @@ const LoginPage = (props) => {
 
       useEffect(()=> {
         if (redirect) {
-          navigate('/customers')
+          navigate('/')
         }
       }, [redirect])
   }
@@ -42,10 +42,11 @@ const LoginPage = (props) => {
           onChange={(e) => setUsername(e.target.value)}
           type="text" />
           <input
+          type='password'
           placeholder='enter your password'
           onChange={(e) => setPassword(e.target.value)}
           value={password}
-          type="text" />
+           />
           <button className="loginBtn"
            >Login</button>
         </form>
