@@ -13,7 +13,7 @@ mongoose.connect(MONGO_URI,
   }
 )
 .then(() => console.log('Connected to Mongo DB inside the module server/userModel'))
-.catch(err => console.log(err));
+.catch(err => console.log('Error connecting to Mungo DB insde the module server/userModel', err));
 
 const userSchema = new Schema({
   username: { type: String, required: true, unique: true },

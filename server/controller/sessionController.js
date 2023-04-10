@@ -4,14 +4,18 @@ const sessionController = {}
 
 
 sessionController.startSession = (req,res,next) => {
-    console.log('  first line inside starsession');
     Session.create({ cookieId: res.locals.userid})
     .then((session) => {
             console.log('session created: ', session);
             return next()
     })
     .catch(err => {
-            return next(`Error in session starter: `, err)
+            return next(
+                {
+                log: 'Error in sessioncontroller.startsession',
+                message: {err}
+                }
+            )
     })
 }
 
@@ -21,7 +25,12 @@ sessionController.isLoggedIn = (req,res,next) => {
         return next()
         })
         .catch (err => {
-            return next('Error in Session isLogdedin Middleware' + JSON.stringify(err))
+            return next(
+                    {
+                        log: 'Error in Session sessionController.isLoggedIn' + JSON.stringify(err),
+                        message: {err}
+                    }
+                )
         })
 }
 
