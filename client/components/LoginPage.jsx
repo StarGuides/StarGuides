@@ -4,19 +4,21 @@ import { useNavigate, Link } from 'react-router-dom'
 import ErrorPage from './ErrorPage';
 
 const LoginPage = (props) => {
-  const [ userName, setUserName ] = useState('')
+  const [ username, setUsername ] = useState('')
   const [ password, setPassword] = useState('')
   const [ redirect, setRedirect ] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const response = await fetch('http://localhost:3000',
+    console.log(username, password )
+    const response = await fetch('http://localhost:3000/login',
       {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({userName, password})
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({username, password})
       })
 
       const parsedData = await response.json();
@@ -36,8 +38,8 @@ const LoginPage = (props) => {
         <form className="loginForm" onSubmit={handleSubmit}>
           <input
           placeholder='enter your email'
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           type="text" />
           <input
           placeholder='enter your password'
