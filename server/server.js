@@ -35,10 +35,7 @@ app.use(express.static('dist'));
 
 // requests to endpoint sign up
 //add this back
-app.use('/login', (req, res) => {
-    console.log(req.body)
-    res.json('ok')
-})
+app.use('/login', loginRouter)
 
 // requests to endpoint sign up
 app.use('/signup', signupRouter)
