@@ -1,12 +1,12 @@
 import React from 'react'
-
+import CustomerPageParent from './CustomerPageParent'
 
 const CustomersPage = () => {
   return (
 
     <div>
       <p className="customerHeader" >Customers</p>
-      <div className='customerWrap' >
+      {/* <div className='customerWrap' >
         <p>firstname</p>
         <p>lastname</p>
         <p>email</p>
@@ -37,7 +37,8 @@ const CustomersPage = () => {
         <p>phone</p>
         <p>location</p>
         <p>skill</p>
-      </div>
+      </div> */}
+      <CustomerPageParent />
     </div>
   )
 }

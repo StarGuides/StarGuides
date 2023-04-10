@@ -6,6 +6,11 @@ const express = require('express');
 const app = express();
 // require the path package to resolve paths
 const path = require('path');
+const cors = require('cors')
+
+app.use(cors());
+
+app.use(express.urlencoded({ extended: false }));
 // json middleware to parse all incoming requests
 app.use(express.json());
 //require cookie parser and initialize cookie parser as global middleware

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import CustomerComponent from './CustomerComponent'
 import CustomerComponentHeader from './CustomerComponentHeader'
 
-const CustomerPage = () => {
+const CustomerPageParent = () => {
     // initialize customer data information
     const [customerData, setCustomerData] = useState([]);
     // boolean to store if data has been fetched
@@ -59,4 +59,4 @@ const CustomerPage = () => {
 
 }
 
-export default CustomerPage;
+export default CustomerPageParent;
