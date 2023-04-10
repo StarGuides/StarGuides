@@ -12,21 +12,21 @@ const sessionController = require('../controller/sessionController');
 
 
 // get response for index html
-router.get((req, res) => res.status)
+// router.get((req, res) => res.status)
 
-// POST request for login path="/"
-router.post('/',
-    userController.verifyUser,
-    sessionController.startSession,
-    cookieController.setSSIDCookie,
-    (req, res) => {
-        return res
-            .status(200)
+// // POST request for login path="/"
+// router.post('/',
+//     // userController.verifyUser,
+//     // sessionController.startSession,
+//     // cookieController.setSSIDCookie,
+//     (req, res) => {
+//         return res
+//             .status(200)
 
-// consider creating having users going to a login page first and then sending the user to a the main app
-            .sendFile(path.resolve(__dirname, "../dist/index.html"))
-    }
-);
+// // consider creating having users going to a login page first and then sending the user to a the main app
+//             .sendFile(path.resolve(__dirname, "../dist/index.html"))
+//     }
+// );
 
 
 // // POST request for login path="/"

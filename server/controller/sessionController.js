@@ -3,26 +3,27 @@ const User = require('../models/userModel')
 const sessionController = {}
 
 
-sessionController.startSession = (req,res,next) =>{
-    Session.create({cookieId:req.cookies.user._id}, (err,session) => {
-        if(err){
-            return next('Error in startSession Middleware' + JSON.stringify(err))
-        } else {
+sessionController.startSession = (req,res,next) => {
+    console.log('  first line inside starsession');
+    Session.create({ cookieId: res.locals.userid})
+    .then((session) => {
+            console.log('session created: ', session);
             return next()
-        }
+    })
+    .catch(err => {
+            return next(`Error in session starter: `, err)
     })
 }
 
 sessionController.isLoggedIn = (req,res,next) => {
-    Session.findOne({cookieId: req.cookies.ssid}, (err,session)=>{
-        if (err) {
-            return next('Error in Session isLogdedin Middleware' + JSON.stringify(err));
-        } else {
-            return next()
-        }
-    })
+    Session.findOne({cookieId: req.cookies.ssid}).exec().then(session=>{
+        console.log('USer is logged in')
+        return next()
+        })
+        .catch (err => {
+            return next('Error in Session isLogdedin Middleware' + JSON.stringify(err))
+        })
 }
-
 
 
 module.exports = sessionController;

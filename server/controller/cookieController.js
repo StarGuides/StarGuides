@@ -3,7 +3,8 @@ const cookieController = {};
 
 cookieController.setSSIDCookie = (req,res,next) => {
     // may have to change the user_id property later according to other login middleware
-    res.cookie('ssid',res.locals.user._id, {httpOnly: true})
+    console.log('setting cookie')
+    res.cookie('ssid',res.locals.userid, {httpOnly: true})
     return next();
 }
 

@@ -20,6 +20,7 @@ const PORT = 3000;
 // require all routes(root, signup, dashboard, analytics, inquiries) //
 const rootRouter = require('./routes/root');
 const signupRouter = require('./routes/signup.js');
+const loginRouter = require('./routes/login.js');
 const dashboardRouter = require('./routes/dashboard');
 const analyticsRouter = require('./routes/analytics');
 const inquiriesRouter = require('./routes/inquiries');
@@ -28,8 +29,8 @@ const inquiriesRouter = require('./routes/inquiries');
 // serve static files
 app.use(express.static('dist'));
 
-// route (/) requests to the rootrouter
-app.use('/', rootRouter);
+// requests to endpoint sign up 
+app.use('/login', loginRouter)
 
 // requests to endpoint sign up 
 app.use('/signup', signupRouter)
@@ -42,6 +43,9 @@ app.use('/analytics', analyticsRouter)
 
 // get request for pending request path="/inquiries"
 app.use('/inquiries', inquiriesRouter)
+
+// route (/) requests to the rootrouter
+app.use('/', rootRouter);
 
 // request from unknown end point
 app.use((req, res) => res.status(400).json('the page you are trying to reach does not exist'))

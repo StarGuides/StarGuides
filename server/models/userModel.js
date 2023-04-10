@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+// can we please hide this key? Also, change the db so that the IP is protected
 const MONGO_URI = 'mongodb+srv://nly714:asdf1212@cluster0.0dmisie.mongodb.net/?retryWrites=true&w=majority'
 const Schema = mongoose.Schema;
 const SALT_WORK_FACTOR = 10;

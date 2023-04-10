@@ -18,7 +18,8 @@ router.post('/',
         res
         .status(200)
         .json(res.locals.user)
-    });
+    }
+);
 
 
 
