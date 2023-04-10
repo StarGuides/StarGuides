@@ -1,4 +1,4 @@
-const db = require('../models/clientModels');
+const db = require('../models/clientModel');
 
 const clientController = {};
 
@@ -22,48 +22,49 @@ clientController.getClients = (req, res, next) => {
       res.locals.clients = data.rows;
       return next();
     })
-    .catch(err => next(err));
+    .catch(err => next({
+      log: 'Error at db.query inside client controller.getClients',
+      message: { err }
+    }));
 }
 
-// CREATE TABLE client (
-//   _id               char(10) CONSTRAINT uniq UNIQUE,
-//   first_name        varchar NOT NULL,
-//   last_name         varchar NOT NULL,
-//   email             varchar NOT NULL,
-//   phone             integer NOT NULL,
-//   start_date        date,
-//   end_date          date,
-//   skill_lvl         integer NOT NULL,
-//   destination       varchar NOT NULL,
-//   location_id       integer,
-// );
 
 
 clientController.addClient = (req, res, next) => {
   const {
+    _id,
     first_name,
     last_name,
     email,
     phone,
-    location,
     start_date,
     end_date,
     skill_lvl,
     destination,
-    location_id
+    location_id,
   } = req.body
-  const queryParams = [first_name,last_name,email,phone,location,start_date,end_date,skill_lvl,destination,location_id]
+  console.log(req.body)
+  const queryParams = [_id,first_name,last_name,email,phone,start_date,end_date,skill_lvl,destination,location_id]
   const queryStr = `
-  INSERT INTO client (first_name,last_name,email,phone,location,start_date,end_date,skill_lvl,destination,location_id)
+  INSERT INTO client (_id,first_name,last_name,email,phone,start_date,end_date,skill_lvl,destination,location_id)
   VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
-  RETURNING*
+  RETURNING *
   ;`;
   db.query(queryStr,queryParams).then(data => {
-    res.locals.character = row[0];
+
+    res.locals.client = data.rows;
     return next()
-  }).catch(err => {return next(err)})
+  }).catch(err => {
+    return next( 
+      {
+        log: 'Error at db.query inside client controller.getClients',
+        message: { err }
+      }
+   )})
 };
 
 clientController.deleteClient = (req, res, next) => {
 
 };
+
+module.exports = clientController;

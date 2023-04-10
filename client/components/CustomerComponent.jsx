@@ -5,23 +5,25 @@ const CustomerComponent = (props) => {
   const {
     first_name,
     last_name,
-    email_address,
-    phone_number,
+    email,
+    phone,
     location,
     skill_lvl,
-    destination,
+    park,
+    state
   } = props.info;
-  console.log("inside child el", props.info);
+//   console.log("inside child el", props.info);
   return (
-    <div>
-      <span>{first_name}</span>
-      <span>{last_name}</span>
-      <span>{email_address}</span>
-      <span>{phone_number}</span>
-      <span>{location}</span>
-      <span>{skill_lvl}</span>
-      <span>{destination}</span>
-    </div>
+      <tr>
+      <td>{first_name} </td>
+      <td>{last_name} </td>
+      <td>{email} </td>
+      <td>{phone} </td>
+      <td>{park} </td>
+      <td>{skill_lvl} </td>
+      <td>{state} </td>
+      </tr>
+
   );
 };
 

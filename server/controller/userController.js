@@ -35,10 +35,14 @@ userController.verifyUser = (req, res, next) => {
             bcrypt.compare(password, user.password)
             .then(result => {
             // console.log('this is the resuly of bcrypt: ', result)
-            res.locals.isVerified = result;
-            // here we can send a message to front end like res.locals.verify = true
-            // we can consider a redirect 
-            return next()
+                if (result === true) {
+                    res.locals.isVerified = {message:'verified'};
+                } else {
+                    res.locals.isVerified = result;
+                };
+                // here we can send a message to front end like res.locals.verify = true
+                // we can consider a redirect 
+                return next()
             })
         })
         .catch(err => {

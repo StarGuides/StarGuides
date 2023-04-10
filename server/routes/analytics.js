@@ -9,7 +9,6 @@ const path = require('path');
 // const /*placeholder*/ = require(/*placeholder*/);
 // const /*placeholder*/ = require(/*placeholder*/);
 
-//Parent component of Customer comp. makes a get request for all customer path="/dashboard
 router.get('/', 
     /*inset middleware here! **and don't forget to add a comma*/
     (req, res) => {
