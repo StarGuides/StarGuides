@@ -30,7 +30,7 @@ const CustomerPage = () => {
       }
 
       // TESTING WITH MOCK DATA
-      // // get array of customers through fetch request
+      // get array of customers through fetch request
       // const fetchedData = [{first_name: 'al', last_name: 'emig', email_address: 'test', phone_number: 'test', location: 'test', start_date: 'test', end_date: 'test', skill_lvl: 'test', destination: 'test'}]
       // const customers = [];
       // // get array of customer components

@@ -1,3 +1,24 @@
-body {
-    background-color: aqua;
+.customer-header span {
+    padding: .5rem;
+
+}
+
+.customer-header {
+    border-radius: 10px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.customer {
+    border-radius: 10px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem;
 }
