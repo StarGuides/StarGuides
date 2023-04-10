@@ -22,13 +22,13 @@ const LoginPage = (props) => {
       })
 
       const parsedData = await response.json();
-      parsedData.message === 'verified' ? setRedirect(true) : null
+      parsedData.message === 'verified' ? navigate('/') : null
 
-      useEffect(()=> {
-        if (redirect) {
-          navigate('/')
-        }
-      }, [redirect])
+      // useEffect(()=> {
+      //   if (redirect) {
+      //     navigate('/')
+      //   }
+      // }, [redirect])
   }
 
   return (
