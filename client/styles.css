@@ -128,16 +128,16 @@ main {
 
 .customerWrap {
   display: flex;
-  border-radius: 12px;
   padding: .7rem;
   margin-bottom: .5rem;
+  border-bottom: 1px solid slategrey;
 }
 
-.customerWrap:hover {
+/* .customerWrap:hover {
   border: 1px solid slategrey;
-}
+} */
 
-.customerWrap p {
+.customerWrap span {
   margin-right: .9rem;
 }
 
