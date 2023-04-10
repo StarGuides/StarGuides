@@ -21,11 +21,11 @@ app.use(cookieParser());
 // initialize a PORT variable to store the port number
 const PORT = 3000;
 
-// require all routes(root, signup, constumer, analytics, inquiries) //
+// require all routes(root, signup, customer, analytics, inquiries) //
 const rootRouter = require('./routes/root');
 const signupRouter = require('./routes/signup.js');
 const loginRouter = require('./routes/login.js');
-const constumerRouter = require('./routes/costumer');
+const customerRouter = require('./routes/customer');
 const analyticsRouter = require('./routes/analytics');
 const inquiriesRouter = require('./routes/inquiries');
 // **************************************************************** //
@@ -44,7 +44,7 @@ app.use('/login', (req, res) => {
 app.use('/signup', signupRouter)
 
 // parent component of Customer comp. makes a get request for all customer path="/constumer
-app.use('/constumer', constumerRouter)
+app.use('/customer', customerRouter)
 
 //"path='analytics" get request for analytics page
 app.use('/analytics', analyticsRouter)
